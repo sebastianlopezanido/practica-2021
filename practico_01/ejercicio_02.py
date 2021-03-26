@@ -72,6 +72,7 @@ def maximo_recursivo(*args) -> float:
 
     primero, *resto = args
     return maximo_recursivo(primero,maximo_recursivo(*resto))
+    
 
                                                                     
 
