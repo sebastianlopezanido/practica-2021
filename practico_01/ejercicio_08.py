@@ -2,14 +2,17 @@
 
 from typing import Any, Iterable
 
-
 def superposicion_basico(lista_1: Iterable[Any], lista_2: Iterable[Any]) -> bool:
     """Toma dos listas y devuelve un booleano en base a si tienen al menos 1
     elemento en común.
 
     Restricción: Utilizar bucles anidados.
     """
-    pass # Completar
+    for x in lista_1:
+        for y in lista_2:
+            if x == y:
+                return True
+    return False
 
 
 # NO MODIFICAR - INICIO
@@ -24,8 +27,11 @@ assert not superposicion_basico(test_list, (2, "world", 30.85))
 
 def superposicion_in(lista_1: Iterable[Any], lista_2: Iterable[Any]) -> bool:
     """Re-Escribir utilizando un sólo bucle y el operador IN."""
-    pass # Completar
-
+    
+    for x in lista_1:
+        if x in lista_2:
+            return True
+    return False
 
 # NO MODIFICAR - INICIO
 test_list = [1, "hello", 35.20]
@@ -41,7 +47,8 @@ def superposicion_any(lista_1: Iterable[Any], lista_2: Iterable[Any]) -> bool:
     """Re-Escribir utilizando sin bucles, el operador in y la funcion any.
     Referencia: https://docs.python.org/3/library/functions.html#any
     """
-    pass # Completar
+    tupla = tuple(x*2 for x in lista_2)
+    return any(tupla)
 
 
 # NO MODIFICAR - INICIO
@@ -58,7 +65,7 @@ def superposicion_set(lista_1: Iterable[Any], lista_2: Iterable[Any]) -> bool:
     """Re-Escribir utilizando conjuntos (sets).
     Referencia: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
     """
-    pass # Completar
+    return any(list(set(lista_1).intersection(set(lista_2))))
 
 
 # NO MODIFICAR - INICIO

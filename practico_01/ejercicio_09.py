@@ -1,12 +1,18 @@
 """FOR, Sum, Reduce."""
 
 
+from typing import Iterable
+
+
 def sumatoria_basico(n: int) -> int:
     """Devuelve la suma de los números de 1 a N.
 
     Restricción: Utilizar un bucle for.
     """
-    pass # Completar
+    suma = 0
+    for x in range(n+1):
+        suma += x
+    return suma
 
 
 # NO MODIFICAR - INICIO
@@ -22,7 +28,16 @@ def sumatoria_sum(n: int) -> int:
     """Re-Escribir utilizando la función sum y sin usar bucles.
     Referencia: https://docs.python.org/3/library/functions.html#sum
     """
-    pass # Completar
+    def sumatoria(lista: list) -> int:
+        if len(lista) == 0:
+            return 0
+        else:
+            return sum(lista + )  
+    
+    suma = lambda x: x==0 and 1 or x + suma(x-1)
+    lista = [n]
+
+    return sumatori_sum(sum(lista)
 
 
 # NO MODIFICAR - INICIO
