@@ -10,8 +10,15 @@ def suma_cubo_pares_for(numeros: Iterable[int]) -> int:
     Restricción: Utilizar dos bucles for, uno para elevar al cubo y otro para
     separar los pares.
     """
-    pass # Completar
 
+    numeros_cubo = []
+    suma = 0
+    for x in numeros:
+        numeros_cubo.append(x**3)
+    for x in numeros_cubo:
+        if x % 2 == 0:
+            suma += x
+    return suma
 
 # NO MODIFICAR - INICIO
 assert suma_cubo_pares_for([1, 2, 3, 4, 5, 6]) == 288
@@ -28,8 +35,8 @@ def suma_cubo_pares_sum_list(numeros: Iterable[int]) -> int:
     Referencia: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
     Referencia: https://docs.python.org/3/library/functions.html#sum
     """
-    pass # Completar
-
+    suma = [x**3 for x in numeros if x % 2 == 0]
+    return sum(suma)
 
 # NO MODIFICAR - INICIO
 assert suma_cubo_pares_sum_list([1, 2, 3, 4, 5, 6]) == 288
@@ -44,7 +51,8 @@ def suma_cubo_pares_sum_gen(numeros: Iterable[int]) -> int:
     y la función sum.
     Referencia: https://docs.python.org/3/reference/expressions.html#generator-expressions
     """
-    pass # Completar
+    suma = (x**3 for x in numeros if x % 2 == 0)
+    return sum(suma)
 
 
 # NO MODIFICAR - INICIO
