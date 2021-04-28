@@ -19,9 +19,14 @@ def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
 
     Restricción: Resolver utilizando un bucle for.
     """
-    pass # Completar
-
-
+    length = len(nombres)
+    lista = []
+    for x in range(length):
+        lista.append((nombres[x],precios[x]))
+    lista = Tuple(lista)
+    print (lista)
+    a =(("shampoo", 5.2),)
+    return a
 # NO MODIFICAR - INICIO
 respuesta = (
     ("ventana", 100.48),
