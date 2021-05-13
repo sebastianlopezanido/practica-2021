@@ -137,7 +137,19 @@ def memoized(func):
     tiempo para la función calcular posibilidades. Prestar atención a los tiempo
     de ejecución
     """
-    pass # Completar
+    try:
+        len(ejecutadas) 
+    except NameError:
+        ejecutadas = dict()  
+    finally:
+        if func in ejecutadas:
+           
+            return ejecutadas[func]
+        else:
+            resultado = func  
+            
+            ejecutadas.update({func: resultado})
+        return resultado
 
 
 @medir_tiempo
