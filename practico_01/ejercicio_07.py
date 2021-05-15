@@ -8,8 +8,9 @@ def es_palindromo(palabra: str) -> bool:
     Restricción: No utilizar bucles - Usar Slices de listas.
     Referencia: https://docs.python.org/3/tutorial/introduction.html#lists
     """
-    pass # Completar
-
+    if palabra == palabra[::-1]:    #Comparo la palabra con su inversa
+        return True                 #Si son iguales devuelvo True
+    return False                    #Si son distintos devuelvo False
 
 # NO MODIFICAR - INICIO
 assert not es_palindromo("amor")
@@ -28,7 +29,13 @@ def mitad(palabra: str) -> str:
     Restricción: No utilizar bucles - Usar Slices de listas.
     Referencia: https://docs.python.org/3/tutorial/introduction.html#lists
     """
-    pass # Completar
+    posFinal = len(palabra)          #posicion final del str
+    posMedio = int(posFinal / 2)     #posicion media del str
+
+    if posFinal % 2 == 1:            #Me fijo si la longitud es par o impar
+        posMedio += 1                #Si es impar le sumo 1 a la posicion media del str
+    return palabra[:posMedio]        #Devuelvo el principio de la palabra hasta la posicion media del str   
+        
 
 
 # NO MODIFICAR - INICIO
